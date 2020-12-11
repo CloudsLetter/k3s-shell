@@ -27,8 +27,8 @@ RestartSec=5s
 ExecStartPre=-/sbin/modprobe br_netfilter
 ExecStartPre=-/sbin/modprobe overlay
 ExecStart=/usr/local/bin/k3s agent \
-    --node-external-ip 129.226.148.137 \
-    --node-ip 129.226.148.137 \
+    --node-external-ip $IP \
+    --node-ip $IP \
     --kube-proxy-arg "proxy-mode=ipvs" "masquerade-all=true" \
     --kube-proxy-arg "metrics-bind-address=0.0.0.0"
 EOF
