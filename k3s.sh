@@ -37,7 +37,7 @@ cat > /etc/systemd/system/k3s-agent.service.env << EOF
 K3S_URL=https://106.75.233.120:6443
 K3S_TOKEN=K1003300dd8333b358f6bf5aa79d594ef8ea7870381b4405a80d2f57109e9ec8749::server:ee33c88b276bd394b3805c5ff2e47e31
 EOF
-systemctl enable k3s-agent
+systemctl enable k3s-agent --now
 wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
 yum install yum-utils epel-release -y
 yum-config-manager --setopt=centosplus.includepkgs=kernel-plus --enablerepo=centosplus --save
